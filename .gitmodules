@@ -1,0 +1,3 @@
+[submodule "proto_hotel"]
+	path = proto
+	url = git@github.com:mf-sakura/bh_proto.git
