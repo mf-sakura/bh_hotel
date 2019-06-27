@@ -4,6 +4,6 @@ until mysqladmin ping -uroot -ppassword -h mysql_hotel --silent; do
 done
 
 
-goose -env compose up
+goose -env=compose -path=. up
 
 mysql -f  -h mysql_hotel -uroot -ppassword bh_hotel < testdata/testdata.sql
