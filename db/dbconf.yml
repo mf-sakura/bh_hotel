@@ -5,3 +5,7 @@ development:
 test:
   driver: mymysql
   open: tcp:127.0.0.1:3306*bh_hotel_test/root/
+
+compose:
+  driver: mymysql
+  open: tcp:mysql_hotel:3306*bh_hotel_test/root/
