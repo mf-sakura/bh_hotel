@@ -1,0 +1,8 @@
+- id: 1
+  plan_id: 3
+  user_id: 1
+  sequence_id: aaa
+- id: 2
+  plan_id: 3
+  user_id: 2
+  sequence_id: bbb

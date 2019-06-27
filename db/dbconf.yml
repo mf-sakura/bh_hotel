@@ -1,0 +1,7 @@
+development:
+  driver: mymysql
+  open: tcp:127.0.0.1:3306*bh_hotel/root/
+
+test:
+  driver: mymysql
+  open: tcp:127.0.0.1:3306*bh_hotel_test/root/
