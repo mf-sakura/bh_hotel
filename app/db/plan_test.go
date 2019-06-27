@@ -19,7 +19,7 @@ func TestInsertPlan(t *testing.T) {
 	}{
 		{
 			name: "正常系(クエリチェック)",
-			args: args{&Plan{Date: time.Now(), HotelID: 1}},
+			args: args{&Plan{DateUnix: uint64(time.Now().Unix()), HotelID: 1}},
 		},
 	}
 	for _, tt := range tests {

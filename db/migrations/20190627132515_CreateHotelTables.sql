@@ -15,13 +15,13 @@ CREATE TABLE IF NOT EXISTS `plan` (
   `id` INT UNSIGNED NOT NULL AUTO_INCREMENT,
   `hotel_id` INT UNSIGNED NOT NULL,
   `description` MEDIUMTEXT NOT NULL comment 'プラン説明',
-  `date` DATETIME NOT NULL comment 'プランの日程',
+  `date_unix` BIGINT UNSIGNED NOT NULL comment 'プランの日程',
   `total` INT UNSIGNED NOT NULL comment 'プランの総数',
   `available` INT UNSIGNED NOT NULL comment 'プランの残り利用数',
   `cost` INT UNSIGNED NOT NULL comment '金額(JPY)',
   PRIMARY KEY (`id`),
   INDEX `hotel_id` (`hotel_id` ASC),
-  INDEX `hotel_id_date` (`hotel_id` ASC, `date` ASC),
+  INDEX `hotel_id_date_unix` (`hotel_id` ASC, `date_unix` ASC),
   FOREIGN KEY (`hotel_id`) REFERENCES `hotel` (`id`) ON DELETE CASCADE
   )ENGINE = InnoDB
 comment='ホテルのプラン情報';

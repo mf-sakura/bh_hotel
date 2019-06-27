@@ -1,23 +1,21 @@
 package db
 
-import (
-	"time"
-)
+import ()
 
 type Plan struct {
-	ID          int64     `db:"id"`
-	HotelID     int64     `db:"hotel_id"`
-	Description string    `db:"description"`
-	Date        time.Time `db:"date"`
-	Total       uint64    `db:"total"`
-	Available   uint64    `db:"available"`
-	Cost        uint64    `db:"cost"`
+	ID          int64  `db:"id"`
+	HotelID     int64  `db:"hotel_id"`
+	Description string `db:"description"`
+	DateUnix    uint64 `db:"date_unix"`
+	Total       uint64 `db:"total"`
+	Available   uint64 `db:"available"`
+	Cost        uint64 `db:"cost"`
 }
 
 func InsertPlan(plan *Plan) (int64, error) {
-	q := "INSERT INTO `plan` ( `hotel_id`, `description`, `date`, `total`, `available`, `cost`) VALUES " +
+	q := "INSERT INTO `plan` ( `hotel_id`, `description`, `date_unix`, `total`, `available`, `cost`) VALUES " +
 		" (?, ?, ?, ?, ?, ?)"
-	res, err := db.Exec(q, plan.HotelID, plan.Description, plan.Date, plan.Total, plan.Available, plan.Cost)
+	res, err := db.Exec(q, plan.HotelID, plan.Description, plan.DateUnix, plan.Total, plan.Available, plan.Cost)
 	if err != nil {
 		return 0, err
 	}

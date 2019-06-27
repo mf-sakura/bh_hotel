@@ -1,14 +1,14 @@
 - id: 1
   hotel_id: 1
   description: plan1
-  date: 2019-07-01
+  date_unix: RAW=UNIX_TIMESTAMP('2019-07-01 00:00:00')
   total: 10
   Available: 10
   Cost: 10000
 - id: 2
   hotel_id: 1
   description: plan2
-  date: 2019-07-02
+  date_unix: RAW=UNIX_TIMESTAMP('2019-07-02 00:00:00')
   total: 10
   Available: 0
   Cost: 10000
