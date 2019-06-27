@@ -8,6 +8,7 @@ CREATE TABLE IF NOT EXISTS `hotel` (
   PRIMARY KEY (`id`),
   UNIQUE INDEX `name` (`name` ASC)
 )ENGINE = InnoDB
+DEFAULT CHARSET=utf8mb4
 comment='ホテルのマスター情報';
 
 -- 日帰りのみ扱う(テーブル設計ミス)
@@ -24,6 +25,7 @@ CREATE TABLE IF NOT EXISTS `plan` (
   INDEX `hotel_id_date_unix` (`hotel_id` ASC, `date_unix` ASC),
   FOREIGN KEY (`hotel_id`) REFERENCES `hotel` (`id`) ON DELETE CASCADE
   )ENGINE = InnoDB
+DEFAULT CHARSET=utf8mb4
 comment='ホテルのプラン情報';
 
 CREATE TABLE IF NOT EXISTS `reservation` (
@@ -38,6 +40,7 @@ CREATE TABLE IF NOT EXISTS `reservation` (
   UNIQUE INDEX `sequence_id` (`sequence_id` ASC),
   FOREIGN KEY (`plan_id`) REFERENCES `plan` (`id`) ON DELETE CASCADE
 )ENGINE = InnoDB
+DEFAULT CHARSET=utf8mb4
 comment='ホテルの予約情報';
 
 
