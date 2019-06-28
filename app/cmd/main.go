@@ -6,6 +6,7 @@ import (
 	hpb "github.com/mf-sakura/bh_hotel/app/proto"
 	"github.com/mf-sakura/bh_hotel/app/server"
 
+	"fmt"
 	"google.golang.org/grpc"
 	"net"
 )
@@ -15,6 +16,7 @@ const (
 )
 
 func main() {
+	fmt.Println("Process Started.")
 	conf, err := config.LoadConifg()
 	if err != nil {
 		panic(err)
