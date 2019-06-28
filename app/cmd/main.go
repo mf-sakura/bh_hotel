@@ -7,7 +7,9 @@ import (
 	"github.com/mf-sakura/bh_hotel/app/server"
 
 	"fmt"
+	"github.com/grpc-ecosystem/go-grpc-middleware/tracing/opentracing"
 	"google.golang.org/grpc"
+
 	"net"
 )
 
@@ -32,7 +34,7 @@ func main() {
 	if err != nil {
 		panic(err)
 	}
-	s := grpc.NewServer()
+	s := grpc.NewServer(grpc_opentracing.UnaryClientInterceptor())
 
 	defer func() {
 		err := recover()
