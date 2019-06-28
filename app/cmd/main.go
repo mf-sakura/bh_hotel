@@ -34,7 +34,7 @@ func main() {
 	if err != nil {
 		panic(err)
 	}
-	s := grpc.NewServer(grpc_opentracing.UnaryClientInterceptor())
+	s := grpc.NewServer(grpc.UnaryInterceptor(grpc_opentracing.UnaryClientInterceptor()))
 
 	defer func() {
 		err := recover()
